@@ -168,7 +168,7 @@ def plot_subject_struct(physio_data, output_dir='~/'):
                 ticdat = ticdat[0:500]
                 ax.plot(dat)
                 ax.plot(ticdat,'r-')
-                ax.set_title(tasklist[k]+", Pulse="+str(rate))
+                ax.set_title(tasklist[k]+", Pulse="+str(rate) + "BPM")
             except IndexError:
                 ax.set_title(tasklist[k]+", Pulse=Unknown")
                 ax.text(0.25,0.4, "ERROR OCCURRED DURING PROCESSING")
@@ -190,7 +190,7 @@ def plot_subject_struct(physio_data, output_dir='~/'):
             ax.plot(ticdat,'r-')
             ax.set_title(tasklist[k]+", Resp= "+str(rate))
         else:
-            ax.set_title(tasklist[k]+", Resp= Unknown")
+            ax.set_title(tasklist[k]+", Resp= Unknown" + "BPM")
             ax.text(0.25,0.4, "FILE NOT FOUND,\nOR PROCESSED WITH ERROR")
     gs.update(wspace=0.1, hspace=0.4)
     figname = physio_data.subid + "_physio.png"
